@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Meu Parceiro no Ministério</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #004080;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .investment {
+            margin: 15px 0;
+            font-size: 1.5em;
+            background-color: #e0f7fa;
+            border: 2px solid #004080;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .progress-container {
+            width: 90%; /* Aumentado para 90% para dispositivos menores */
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin: 10px auto;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            height: 30px;
+            background-color: #007bff;
+            width: 0;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            position: relative; /* Para texto dentro da barra */
+        }
+        .progress-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff; /* Texto em branco para contraste */
+            font-weight: bold;
+            font-size: 1em; /* Tamanho do texto reduzido */
+        }
+        .cta {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #004080;
+        }
+
+        /* Consultas de mídia para responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Reduz o tamanho do título em telas menores */
+            }
+            .investment {
+                font-size: 1.2em; /* Ajusta o tamanho da fonte */
+            }
+            .cta {
+                font-size: 1.2em; /* Ajusta o tamanho da fonte do CTA */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em; /* Ajusta ainda mais para telas pequenas */
+            }
+            .investment {
+                font-size: 1em; /* Reduz ainda mais o tamanho da fonte */
+            }
+            .cta {
+                font-size: 1em; /* Reduz o tamanho da fonte do CTA */
+            }
+            .progress-text {
+                font-size: 0.8em; /* Ajusta o texto para telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Seja Meu Parceiro no Ministério</h1>
+    <div class="investment">25 pessoas investindo com R$25,00</div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 50%;">
+            <div class="progress-text">12/25</div>
+        </div>
+    </div>
+    
+    <div class="investment">10 pessoas investindo com R$50,00</div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 30%;">
+            <div class="progress-text">3/10</div>
+        </div>
+    </div>
+    
+    <div class="investment">09 pessoas investindo com R$30,00</div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 70%;">
+            <div class="progress-text">6/9</div>
+        </div>
+    </div>
+    
+    <div class="investment">01 pessoa investindo com R$20,00</div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 10%;">
+            <div class="progress-text">0/1</div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <p>" ... por mais de uma vez vocês mandaram o bastante para as minhas necessidades. Não que eu esteja pedindo ajuda, pois o que realmente me interessa é o fruto que aumente o crédito na conta de vocês." - Fp 4:16-17 </p>
+        <p>Entre em contato: <a href="mailto:seuemail@example.com">(64)98448-2561</a></p>
+    </div>
+
+    <script>
+        // Função para atualizar as barras de progresso e os contadores
+        function updateProgressBar(index, value, total) {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            const progressTexts = document.querySelectorAll('.progress-text');
+            if (index < progressBars.length) {
+                progressBars[index].style.width = (value / total * 100) + '%'; // Atualiza a barra com base no valor
+                progressTexts[index].textContent = `${value}/${total}`;
+            }
+        }
+
+        // Exemplo de atualização das barras de progresso
+        updateProgressBar(0, 0, 25); // Atualiza a barra do primeiro investimento
+        updateProgressBar(1, 0, 10); // Atualiza a barra do segundo investimento
+        updateProgressBar(2, 0, 9);  // Atualiza a barra do terceiro investimento
+        updateProgressBar(3, 0, 1);  // Atualiza a barra do quarto investimento
+    </script>
+</body>
+</html>
